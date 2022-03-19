@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
+import BoxItem from '../../components/BoxItem';
 
 // import { Container } from './styles';
 
@@ -18,17 +19,18 @@ const Home: React.FC = () => {
       <View>
         <ScrollView>
           {products.map(product => {
-            console.log(product.image)
+            // console.log(product.image)
             return (
-              <View key={product.id}>
-                <Text>
-                  Categoria: {product.category}
-                </Text>
-                <Text>
-                  Nome: {product.title}
-                </Text>
-                <Image source={{ uri: product.image }} style={{ width: 100, height: 100 }} />
-              </View>
+              <BoxItem product={product} />
+              // <View key={product.id}>
+              //   <Text>
+              //     Categoria: {product.category}
+              //   </Text>
+              //   <Text>
+              //     Nome: {product.title}
+              //   </Text>
+              //   <Image source={{ uri: product.image }} style={{ width: 100, height: 100 }} />
+              // </View>
             )
           })}
 
