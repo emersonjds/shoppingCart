@@ -10,18 +10,35 @@ interface Props {
 }
 
 const BoxItem: React.FC<Props> = ({ product }) => {
-  const { id, category, title, image } = product;
+  // const { id, category, title, image } = product;
   return (
     <>
-      <View key={id}>
+
+      <View style={{
+        width: 150,
+        height: 150,
+        backgroundColor: 'red',
+        borderColor: '#000',
+        marginBottom: 10,
+        marginRight: 10,
+      }}>
         <Text>
-          Categoria: {category}
+          Emerson
         </Text>
-        <Text>
-          Nome: {title}
-        </Text>
-        <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />
       </View>
+
+      {/* <View style={{
+        height: 100,
+        width: 100,
+      }}>
+        <Text>
+          Categoria: {product.category}
+        </Text>
+        <Text>
+          Nome: {product.title}
+        </Text>
+        <Image source={{ uri: product.image }} style={{ width: 100, height: 100 }} />
+      </View> */}
     </>
   );
 }

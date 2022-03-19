@@ -16,21 +16,21 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <View>
-        <ScrollView>
+      <View style={{
+        height: '100%',
+        width: '100%',
+        backgroundColor: 'orange',
+        alignItems: 'center',
+      }}>
+        <ScrollView style={{
+          height: '100%',
+          width: '100%',
+        }}
+          horizontal={true}
+        >
           {products.map(product => {
-            // console.log(product.image)
             return (
-              <BoxItem product={product} />
-              // <View key={product.id}>
-              //   <Text>
-              //     Categoria: {product.category}
-              //   </Text>
-              //   <Text>
-              //     Nome: {product.title}
-              //   </Text>
-              //   <Image source={{ uri: product.image }} style={{ width: 100, height: 100 }} />
-              // </View>
+              <BoxItem key={product.id} product={product} />
             )
           })}
 
