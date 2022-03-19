@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { FlatList, Image, ScrollView, Text, View } from 'react-native';
 import BoxItem from '../../components/BoxItem';
 
 // import { Container } from './styles';
@@ -14,27 +14,30 @@ const Home: React.FC = () => {
       .then(data => setProducts(data))
   }, [])
 
+  const renderItem = ({ item }) => {
+    return (
+      <BoxItem product={item} />
+    )
+  }
+
+
   return (
     <>
       <View style={{
         height: '100%',
         width: '100%',
         backgroundColor: 'orange',
-        alignItems: 'center',
-      }}>
-        <ScrollView style={{
-          height: '100%',
-          width: '100%',
-        }}
-          horizontal={true}
-        >
-          {products.map(product => {
-            return (
-              <BoxItem key={product.id} product={product} />
-            )
-          })}
 
-        </ScrollView>
+      }}>
+        <FlatList
+          contentContainerStyle={{
+            alignItems: 'center',
+          }}
+          data={products}
+          renderItem={renderItem}
+          keyExtractor={item => String(item.id)}
+          numColumns={2}
+        />
       </View>
     </>
   );

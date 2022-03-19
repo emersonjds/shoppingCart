@@ -19,8 +19,7 @@ const BoxItem: React.FC<Props> = ({ product }) => {
         height: 150,
         backgroundColor: 'red',
         borderColor: '#000',
-        marginBottom: 10,
-        marginRight: 10,
+        margin: 10,
       }}>
         <Text>
           Emerson
