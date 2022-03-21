@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import BoxItem from '../../components/BoxItem';
+import { shoppingSelector } from '../../redux/slices/shoppingSlice';
 import { Container, FltList } from './style';
 
 const Home: React.FC = () => {
   const [products, setProducts] = React.useState([]);
+
+  const shopSelector = useSelector(shoppingSelector);
+
+  useEffect(() => {
+    console.log(shopSelector)
+  }, [shopSelector]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')

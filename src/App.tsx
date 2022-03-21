@@ -7,19 +7,16 @@ import Home from './screens/Home';
 const App: React.FC = () => (
   <Provider store={store}>
     <SafeAreaView>
-      <View style={{
-        padding: 20,
-      }}>
-        <Text>
-          Shopping
-        </Text>
-
+      <View
+        // eslint-disable-next-line react-native/no-inline-styles
+        style={{
+          padding: 20,
+        }}>
+        <Text>Shopping</Text>
         <Home />
-
       </View>
     </SafeAreaView>
   </Provider>
-
-)
+);
 
 export default App;
