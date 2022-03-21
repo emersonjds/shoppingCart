@@ -10,13 +10,13 @@ const Home: React.FC = () => {
   const shopSelector = useSelector(shoppingSelector);
 
   useEffect(() => {
-    console.log(shopSelector)
+    console.log(shopSelector);
   }, [shopSelector]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
-      .then(data => setProducts(data))
+      .then(data => setProducts(data));
   }, []);
 
   const renderItem = ({ item }) => {

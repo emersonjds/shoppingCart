@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 interface ShoppingState {
-  cart: [],
-  products: [],
+  cart: [];
+  products: [];
 }
 
 export const slice = createSlice({
