@@ -6,15 +6,15 @@ interface Props {
     title: string;
     image: string;
     category: string;
-  }
+    price: number;
+  };
 }
 
 const BoxItem: React.FC<Props> = ({ product }) => {
   // const { id, category, title, image } = product;
   return (
     <>
-
-      <View style={{
+      {/* <View style={{
         width: 150,
         height: 150,
         backgroundColor: 'red',
@@ -24,22 +24,40 @@ const BoxItem: React.FC<Props> = ({ product }) => {
         <Text>
           Emerson
         </Text>
-      </View>
-
-      {/* <View style={{
-        height: 100,
-        width: 100,
-      }}>
-        <Text>
-          Categoria: {product.category}
-        </Text>
-        <Text>
-          Nome: {product.title}
-        </Text>
-        <Image source={{ uri: product.image }} style={{ width: 100, height: 100 }} />
       </View> */}
+
+      <View
+        // eslint-disable-next-line react-native/no-inline-styles
+        style={{
+          width: 150,
+          height: 150,
+          borderColor: '#000',
+          borderWidth: 1,
+          margin: 10,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#fff',
+          borderRadius: 10,
+        }}>
+        <Image
+          source={{ uri: product.image }}
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={{ width: 50, height: 50 }}
+          resizeMode="contain"
+        />
+        <Text
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={{
+            textAlign: 'center',
+          }}>
+          Price: {product.price}
+        </Text>
+        <Text style={{
+            textAlign: 'center',
+          }}>{product.title}</Text>
+      </View>
     </>
   );
-}
+};
 
 export default BoxItem;

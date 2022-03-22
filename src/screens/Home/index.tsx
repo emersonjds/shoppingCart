@@ -16,6 +16,8 @@ const Home: React.FC = () => {
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
+      // .then(data => {
+        // console.log(data)})
       .then(data => setProducts(data));
   }, []);
 
