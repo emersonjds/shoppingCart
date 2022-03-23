@@ -41,7 +41,7 @@ const Home: React.FC = () => {
       <SafeAreaView>
         <Container>
           <FltList
-            data={dataProduct}
+            data={products}
             renderItem={renderItem}
             keyExtractor={(item: { id: number }) => String(item.id)}
             numColumns={2}
