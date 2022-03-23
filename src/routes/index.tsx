@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Details from '../screens/Details';
 import Home from '../screens/Home';
+import Resume from '../screens/Resume';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const Routes = () => {
           }}
         />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Resume" component={Resume} />
       </Stack.Navigator>
     </NavigationContainer>
   );
