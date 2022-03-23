@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import Colors from '../../contants';
 
 export const Container = styled.View`
   flex: 1;
@@ -29,20 +30,24 @@ export const ContainerProductDetails = styled.View`
 `;
 
 export const TitleProduct = styled.Text`
-  color: #333;
+  color: ${Colors.SECONDARY_TEXT_COLOR};
   font-size: 18px;
   text-align: center;
 `;
 
 export const TitlePrice = styled.Text`
-  color: #ea4c89;
+  color: ${Colors.PRIMARY_COLOR};
   font-size: 18px;
+`;
+
+export const TitleDescription = styled.Text`
+  color: ${Colors.SECONDARY_TEXT_COLOR};
 `;
 
 export const ButtonPay = styled.TouchableOpacity`
   height: 52px;
   width: 50%;
-  background-color: #ea4c89;
+  background-color: ${Colors.PRIMARY_COLOR};
   align-items: center;
   justify-content: center;
   border-radius: 50px;

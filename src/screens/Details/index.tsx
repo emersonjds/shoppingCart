@@ -3,14 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 import { useDispatch } from 'react-redux';
+import { Box, Container } from '../../components/Spacing';
 import { addToCart } from '../../redux/slices/shoppingSlice';
 
 import {
   BottomContainer,
   ButtonPay,
-  Container,
   ContainerProductDetails,
   TextButtonPay,
+  TitleDescription,
   TitlePrice,
   TitleProduct,
   TopContainer,
@@ -60,43 +61,27 @@ const Details: React.FC = () => {
         />
         {/* TODO: add styles for this container */}
         <ContainerProductDetails>
-          <View
-            style={{
-              width: '70%',
-            }}>
+          <Box width={'70%'}>
             <TitleProduct>{product.title}</TitleProduct>
-          </View>
-          <View
-            style={{
-              width: '30%',
-            }}>
+          </Box>
+          <Box width={'30%'}>
             <TitlePrice>R$ {product.price}</TitlePrice>
-          </View>
+          </Box>
         </ContainerProductDetails>
 
-        <View>
+        <Box>
           <AirbnbRating
             count={5}
             defaultRating={product.rating.rate}
             size={20}
-            // eslint-disable-next-line react-native/no-inline-styles
             starContainerStyle={{
               marginTop: -30,
             }}
           />
-        </View>
-        <View
-          style={{
-            paddingHorizontal: 30,
-            marginTop: 20,
-          }}>
-          <Text
-            style={{
-              color: '#000',
-            }}>
-            {product.description}
-          </Text>
-        </View>
+        </Box>
+        <Box mt={20} paddingLeft={20} paddingRight={20}>
+          <TitleDescription>{product.description}</TitleDescription>
+        </Box>
       </TopContainer>
       <BottomContainer>
         <View

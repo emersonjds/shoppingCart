@@ -28,7 +28,7 @@ type BoxProps =
 
 export const Container = styled.View`
   background-color: ${Colors.PRIMARY_BACKGROUND_COLOR};
-  padding: 20px;
+  padding: 10px;
   flex: 1;
 `;
 
