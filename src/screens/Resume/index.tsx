@@ -12,7 +12,7 @@ const Resume: React.FC = () => {
     console.log('DADOS', cart);
   }, []);
 
-  return <View />;
+  return <View testID="Resume" />;
 };
 
 export default Resume;
