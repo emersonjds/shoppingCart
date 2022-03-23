@@ -3,14 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 import { useDispatch } from 'react-redux';
-import { Box, Container } from '../../components/Spacing';
+import { Box, Container, HorizontalDivider } from '../../components/Spacing';
 import { addToCart } from '../../redux/slices/shoppingSlice';
 
 import {
   BottomContainer,
   ButtonPay,
   ContainerProductDetails,
+  QuantityButton,
+  QuantityText,
   TextButtonPay,
+  TextQuantityButton,
   TitleDescription,
   TitlePrice,
   TitleProduct,
@@ -59,7 +62,6 @@ const Details: React.FC = () => {
           }}
           resizeMode="contain"
         />
-        {/* TODO: add styles for this container */}
         <ContainerProductDetails>
           <Box width={'70%'}>
             <TitleProduct>{product.title}</TitleProduct>
@@ -74,6 +76,7 @@ const Details: React.FC = () => {
             count={5}
             defaultRating={product.rating.rate}
             size={20}
+            // eslint-disable-next-line react-native/no-inline-styles
             starContainerStyle={{
               marginTop: -30,
             }}
@@ -83,43 +86,24 @@ const Details: React.FC = () => {
           <TitleDescription>{product.description}</TitleDescription>
         </Box>
       </TopContainer>
+      <HorizontalDivider />
       <BottomContainer>
-        <View
-          style={{
-            width: '100%',
-            flexDirection: 'row',
-            backgroundColor: 'orange',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}>
-          <TouchableOpacity onPress={() => removeQuantity()}>
-            <Text
-              style={{
-                color: '#000',
-                fontSize: 20,
-              }}>
-              -
-            </Text>
-          </TouchableOpacity>
-          <Text
-            style={{
-              color: '#000',
-            }}>
-            Quantidade: {quantity}
-          </Text>
-          <TouchableOpacity onPress={() => addQuantity()}>
-            <Text
-              style={{
-                color: '#000',
-                fontSize: 20,
-              }}>
-              +
-            </Text>
-          </TouchableOpacity>
+        <Box
+          width={'100%'}
+          flexDirection={'row'}
+          justifyContent={'space-between'}
+          alignItems={'center'}>
+          <QuantityButton onPress={() => removeQuantity()}>
+            <TextQuantityButton>-</TextQuantityButton>
+          </QuantityButton>
+          <QuantityText>{quantity}</QuantityText>
+          <QuantityButton onPress={() => addQuantity()}>
+            <TextQuantityButton>+</TextQuantityButton>
+          </QuantityButton>
           <ButtonPay onPress={() => addProductToCart()}>
             <TextButtonPay>Buy Now</TextButtonPay>
           </ButtonPay>
-        </View>
+        </Box>
       </BottomContainer>
     </Container>
   );

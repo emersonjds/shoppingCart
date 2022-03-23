@@ -17,7 +17,6 @@ export const BottomContainer = styled.View`
   width: 100%;
   padding: 20px;
   align-items: center;
-  justify-content: center;
 `;
 
 export const ContainerProductDetails = styled.View`
@@ -56,5 +55,27 @@ export const ButtonPay = styled.TouchableOpacity`
 export const TextButtonPay = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  color: #000;
+  color: ${Colors.PRIMARY_BACKGROUND_COLOR};
+`;
+
+export const QuantityButton = styled.TouchableOpacity`
+  color: ${Colors.PRIMARY_TEXT_COLOR};
+  font-size: 20px;
+  background-color: ${Colors.PRIMARY_BUTTON_COLOR};
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+`;
+
+export const QuantityText = styled.Text`
+  color: ${Colors.PRIMARY_TEXT_COLOR};
+  font-size: 18px;
+`;
+
+export const TextQuantityButton = styled.Text`
+  color: ${Colors.PRIMARY_TEXT_COLOR};
+  font-size: 16px;
 `;
