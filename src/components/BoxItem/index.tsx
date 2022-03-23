@@ -42,6 +42,7 @@ const BoxItem: React.FC<Props> = ({ product }) => {
           // eslint-disable-next-line react-native/no-inline-styles
           style={{
             textAlign: 'center',
+            color: '#000',
           }}>
           Price: {product.price}
         </Text>
@@ -50,6 +51,7 @@ const BoxItem: React.FC<Props> = ({ product }) => {
           ellipsizeMode="tail"
           style={{
             textAlign: 'center',
+            color: '#000',
           }}>
           {product.title}
         </Text>
