@@ -1,0 +1,11 @@
+const Colors = {
+  PRIMARY_BACKGROUND_COLOR: '#f5f5f5',
+  PRIMARY_COLOR: '#00a8ff',
+  PRIMARY_TEXT_COLOR: '#000',
+  SECONDARY_TEXT_COLOR: '#666',
+  SECONDARY_BACKGROUND_COLOR: '#fff',
+  SECONDARY_COLOR: '#f5f5f5',
+  SECONDARY_BORDER_COLOR: '#e5e5e5',
+};
+
+export default Colors;
