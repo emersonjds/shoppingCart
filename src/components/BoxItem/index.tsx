@@ -12,26 +12,13 @@ interface Props {
 }
 
 const BoxItem: React.FC<Props> = ({ product }) => {
-  // const { id, category, title, image } = product;
-
   const navigation = useNavigation();
 
   return (
     <>
-      {/* <View style={{
-        width: 150,
-        height: 150,
-        backgroundColor: 'red',
-        borderColor: '#000',
-        margin: 10,
-      }}>
-        <Text>
-          Emerson
-        </Text>
-      </View> */}
-
       <TouchableOpacity
         onPress={() => navigation.navigate('Details', { product })}
+        // TODO: create a component for that
         // eslint-disable-next-line react-native/no-inline-styles
         style={{
           width: 150,
@@ -43,9 +30,8 @@ const BoxItem: React.FC<Props> = ({ product }) => {
           justifyContent: 'center',
           backgroundColor: '#fff',
           borderRadius: 10,
-        }}
-        
-        >
+        }}>
+        {/* TODO: create a component for that */}
         <Image
           source={{ uri: product.image }}
           // eslint-disable-next-line react-native/no-inline-styles
@@ -59,7 +45,8 @@ const BoxItem: React.FC<Props> = ({ product }) => {
           }}>
           Price: {product.price}
         </Text>
-        <Text style={{
+        <Text
+          style={{
             textAlign: 'center',
           }}>
           {product.title}
