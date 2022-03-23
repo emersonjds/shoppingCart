@@ -4,11 +4,15 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/slices/shoppingSlice';
-import { Container } from '../Home/style';
+
 import {
   BottomContainer,
   ButtonPay,
+  Container,
+  ContainerProductDetails,
   TextButtonPay,
+  TitlePrice,
+  TitleProduct,
   TopContainer,
 } from './styles';
 
@@ -43,10 +47,7 @@ const Details: React.FC = () => {
   }, []);
 
   return (
-    <Container
-      style={{
-        backgroundColor: '#fff',
-      }}>
+    <Container>
       <TopContainer>
         <Image
           source={{ uri: product.image }}
@@ -58,51 +59,28 @@ const Details: React.FC = () => {
           resizeMode="contain"
         />
         {/* TODO: add styles for this container */}
-        <View
-          style={{
-            // width: '70%',
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            marginTop: 25,
-            paddingHorizontal: 30,
-          }}>
+        <ContainerProductDetails>
           <View
             style={{
               width: '70%',
             }}>
-            <Text
-              style={{
-                color: '#000',
-                textAlign: 'center',
-              }}>
-              {product.title}
-            </Text>
+            <TitleProduct>{product.title}</TitleProduct>
           </View>
           <View
             style={{
               width: '30%',
             }}>
-            <Text
-              style={{
-                color: '#ea4c89',
-                fontSize: 18,
-              }}>
-              R$ {product.price}
-            </Text>
+            <TitlePrice>R$ {product.price}</TitlePrice>
           </View>
-        </View>
+        </ContainerProductDetails>
 
-        <View
-          style={{
-            justifyContent: 'flex-start',
-          }}>
+        <View>
           <AirbnbRating
             count={5}
             defaultRating={product.rating.rate}
             size={20}
+            // eslint-disable-next-line react-native/no-inline-styles
             starContainerStyle={{
-              // backgroundColor: 'pink',
               marginTop: -30,
             }}
           />
