@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Image } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 import { useDispatch } from 'react-redux';
 import { Box, Container, HorizontalDivider } from '../../components/Spacing';
