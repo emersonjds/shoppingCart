@@ -1,14 +1,22 @@
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Details from '../screens/Details';
+import Home from '../screens/Home';
 
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <NavigationContainer>
-      <Stack.Navigator headerMode="none">
-        <Stack.Screen name="Home" component={Home} />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>

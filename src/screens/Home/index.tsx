@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useSelector } from 'react-redux';
 import BoxItem from '../../components/BoxItem';
 import { shoppingSelector } from '../../redux/slices/shoppingSlice';
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       // .then(data => {
-        // console.log(data)})
+      // console.log(data)})
       .then(data => setProducts(data));
   }, []);
 
@@ -27,14 +28,16 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Container>
-        <FltList
-          data={products}
-          renderItem={renderItem}
-          keyExtractor={(item: { id: number }) => String(item.id)}
-          numColumns={2}
-        />
-      </Container>
+      <SafeAreaView>
+        <Container>
+          <FltList
+            data={products}
+            renderItem={renderItem}
+            keyExtractor={(item: { id: number }) => String(item.id)}
+            numColumns={2}
+          />
+        </Container>
+      </SafeAreaView>
     </>
   );
 };

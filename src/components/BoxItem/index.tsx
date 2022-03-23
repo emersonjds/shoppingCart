@@ -1,5 +1,6 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, TouchableOpacity } from 'react-native';
 interface Props {
   product: {
     id: number;
@@ -12,6 +13,9 @@ interface Props {
 
 const BoxItem: React.FC<Props> = ({ product }) => {
   // const { id, category, title, image } = product;
+
+  const navigation = useNavigation();
+
   return (
     <>
       {/* <View style={{
@@ -26,7 +30,8 @@ const BoxItem: React.FC<Props> = ({ product }) => {
         </Text>
       </View> */}
 
-      <View
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Details', { product })}
         // eslint-disable-next-line react-native/no-inline-styles
         style={{
           width: 150,
@@ -38,7 +43,9 @@ const BoxItem: React.FC<Props> = ({ product }) => {
           justifyContent: 'center',
           backgroundColor: '#fff',
           borderRadius: 10,
-        }}>
+        }}
+        
+        >
         <Image
           source={{ uri: product.image }}
           // eslint-disable-next-line react-native/no-inline-styles
@@ -54,8 +61,10 @@ const BoxItem: React.FC<Props> = ({ product }) => {
         </Text>
         <Text style={{
             textAlign: 'center',
-          }}>{product.title}</Text>
-      </View>
+          }}>
+          {product.title}
+        </Text>
+      </TouchableOpacity>
     </>
   );
 };
