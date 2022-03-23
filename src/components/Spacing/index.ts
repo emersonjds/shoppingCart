@@ -38,3 +38,11 @@ export const Box = styled.View<BoxProps>`
  	${flex}
 	position: relative;
 `;
+
+export const HorizontalDivider = styled.View`
+  border-bottom-width: 1px;
+  border-bottom-color: #d9dbe9;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
