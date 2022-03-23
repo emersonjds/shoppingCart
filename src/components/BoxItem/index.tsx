@@ -46,6 +46,8 @@ const BoxItem: React.FC<Props> = ({ product }) => {
           Price: {product.price}
         </Text>
         <Text
+          numberOfLines={2}
+          ellipsizeMode="tail"
           style={{
             textAlign: 'center',
           }}>
