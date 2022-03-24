@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, ScrollView, Text } from 'react-native';
+import { Image, ScrollView } from 'react-native';
 import { useSelector } from 'react-redux';
 import { Box, Container } from '../../components/Spacing';
 import { shoppingSelector } from '../../redux/slices/shoppingSlice';
+import { Title } from './styles';
 
 const Resume: React.FC = () => {
   const { cart } = useSelector(shoppingSelector);
@@ -20,24 +21,15 @@ const Resume: React.FC = () => {
             <Box width={'20%'}>
               <Image
                 source={{ uri: product.image }}
+                // eslint-disable-next-line react-native/no-inline-styles
                 style={{ width: 70, height: 70 }}
               />
             </Box>
             <Box width={'50%'} alignItems={'center'}>
-              <Text
-                style={{
-                  color: '#000',
-                }}>
-                {product.title}
-              </Text>
+              <Title>{product.title}</Title>
             </Box>
             <Box width={'30%'} alignItems={'center'}>
-              <Text
-                style={{
-                  color: '#000',
-                }}>
-                {product.quantity}
-              </Text>
+              <Title>{product.quantity}</Title>
             </Box>
           </Box>
         ))}
