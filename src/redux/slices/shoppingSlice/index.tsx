@@ -2,14 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface ShoppingState {
   cart: [];
-  products: [];
 }
 
 export const slice = createSlice({
   name: 'shopping',
   initialState: {
     cart: [],
-    products: [],
   } as ShoppingState,
   reducers: {
     addToCart: (state, { payload }) => {
@@ -24,7 +22,14 @@ export const slice = createSlice({
       const updateProduct = { ...product, quantity: quantity + 1 };
       return {
         ...state,
-        cart: [...state.cart.filter(item => item.id !== id), updateProduct],
+        cart: [
+          ...state.cart.map(item => {
+            if (item.id === id) {
+              return updateProduct;
+            }
+            return item;
+          }),
+        ],
       };
     },
     removeQuantityOfItem: (state, { payload }) => {
@@ -33,7 +38,14 @@ export const slice = createSlice({
       const updateProduct = { ...product, quantity: quantity - 1 };
       return {
         ...state,
-        cart: [...state.cart.filter(item => item.id !== id), updateProduct],
+        cart: [
+          ...state.cart.map(item => {
+            if (item.id === id) {
+              return updateProduct;
+            }
+            return item;
+          }),
+        ],
       };
     },
   },
