@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 interface ShoppingState {
   cart: [];
@@ -16,12 +16,31 @@ export const slice = createSlice({
       return {
         ...state,
         cart: [...state.cart, payload],
-      }
+      };
     },
-  }
-})
+    addQuantityOfItem: (state, { payload }) => {
+      const { id, quantity } = payload;
+      const product = state.cart.find(item => item.id === id);
+      const updateProduct = { ...product, quantity: quantity + 1 };
+      return {
+        ...state,
+        cart: [...state.cart.filter(item => item.id !== id), updateProduct],
+      };
+    },
+    removeQuantityOfItem: (state, { payload }) => {
+      const { id, quantity } = payload;
+      const product = state.cart.find(item => item.id === id);
+      const updateProduct = { ...product, quantity: quantity - 1 };
+      return {
+        ...state,
+        cart: [...state.cart.filter(item => item.id !== id), updateProduct],
+      };
+    },
+  },
+});
 
-export const { addToCart } = slice.actions;
+export const { addToCart, addQuantityOfItem, removeQuantityOfItem } =
+  slice.actions;
 
 export const shoppingSelector = (state: { shopping: string }) => state.shopping;
 
