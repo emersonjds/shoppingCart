@@ -1,9 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 import { Image, ScrollView, Text, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box, Container, HorizontalDivider } from '../../components/Spacing';
-import Colors from '../../contants';
 import {
   addQuantityOfItem,
   removeQuantityOfItem,
@@ -15,6 +14,15 @@ const Resume: React.FC = () => {
   const { cart } = useSelector(shoppingSelector);
   const dispatch = useDispatch();
   const navigation = useNavigation();
+
+  const totalValue = () => {
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.quantity;
+    });
+    console.log('TOTAL', total);
+    return total;
+  };
 
   return (
     <Container>
@@ -74,6 +82,11 @@ const Resume: React.FC = () => {
         alignItems={'center'}
         justifyContent="center">
         <HorizontalDivider />
+        <Text>
+          <Text style={{ fontWeight: 'bold', color: '#000' }}>
+            R$ Valor total: {totalValue()}
+          </Text>
+        </Text>
         <TouchableOpacity
           // eslint-disable-next-line react-native/no-inline-styles
           style={{

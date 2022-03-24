@@ -48,6 +48,12 @@ export const slice = createSlice({
         ],
       };
     },
+    removeAllFromCart: state => {
+      return {
+        ...state,
+        cart: [],
+      };
+    },
   },
 });
 
