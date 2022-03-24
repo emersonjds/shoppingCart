@@ -59,25 +59,36 @@ const Resume: React.FC = () => {
         <Text
           style={{
             textAlign: 'center',
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: 'bold',
-            color: '#000',
+            color: '#ea4c89',
           }}
           onPress={() => navigation.navigate('Home')}>
           Continuar comprando
         </Text>
       </Box>
-      <HorizontalDivider />
-      <Box height={'20%'} width="100%">
+
+      <Box
+        height={'20%'}
+        width="100%"
+        alignItems={'center'}
+        justifyContent="center">
+        <HorizontalDivider />
         <TouchableOpacity
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{
             height: 52,
             width: '100%',
-            backgroundColor: Colors.PRIMARY_COLOR,
+            backgroundColor: '#ea4c89',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: 50,
           }}>
           <Text
             style={{
               color: '#fff',
+              fontSize: 20,
+              fontWeight: 'bold',
             }}>
             Finalizar compra
           </Text>
