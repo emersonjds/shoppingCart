@@ -20,7 +20,7 @@ export const BottomContainer = styled.View`
 `;
 
 export const ContainerProductDetails = styled.View`
-  flex-direction: row;
+  // flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   margin-top: 25px;
@@ -53,7 +53,7 @@ export const ButtonPay = styled.TouchableOpacity`
 `;
 
 export const TextButtonPay = styled.Text`
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   color: ${Colors.PRIMARY_BACKGROUND_COLOR};
 `;

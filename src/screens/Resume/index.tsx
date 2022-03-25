@@ -74,7 +74,13 @@ const Resume: React.FC = () => {
           onPress={() => navigation.navigate('Liven Shopping')}>
           Continuar comprando
         </Text>
-        <HorizontalDivider />
+      </Box>
+
+      <Box
+        height={'20%'}
+        width="100%"
+        alignItems={'center'}
+        justifyContent="center">
         <Box alignItems={'flex-end'}>
           <Text>
             <Text
@@ -83,18 +89,12 @@ const Resume: React.FC = () => {
             </Text>
           </Text>
         </Box>
-      </Box>
-
-      <Box
-        height={'20%'}
-        width="100%"
-        alignItems={'center'}
-        justifyContent="center">
+        <HorizontalDivider />
         <TouchableOpacity
           // eslint-disable-next-line react-native/no-inline-styles
           style={{
             height: 52,
-            width: '100%',
+            width: '80%',
             backgroundColor: '#ea4c89',
             alignItems: 'center',
             justifyContent: 'center',

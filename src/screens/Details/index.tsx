@@ -66,7 +66,7 @@ const Details: React.FC = () => {
           <Box width={'70%'}>
             <TitleProduct>{product.title}</TitleProduct>
           </Box>
-          <Box width={'30%'}>
+          <Box width={'30%'} mt={20}>
             <TitlePrice>R$ {product.price}</TitlePrice>
           </Box>
         </ContainerProductDetails>
@@ -101,7 +101,7 @@ const Details: React.FC = () => {
             <TextQuantityButton>+</TextQuantityButton>
           </QuantityButton>
           <ButtonPay onPress={() => addProductToCart()}>
-            <TextButtonPay>Buy Now</TextButtonPay>
+            <TextButtonPay>Adicionar ao Carrinho</TextButtonPay>
           </ButtonPay>
         </Box>
       </BottomContainer>
