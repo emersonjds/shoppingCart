@@ -26,7 +26,7 @@ const Resume: React.FC = () => {
 
   return (
     <Container>
-      <Box height={'80%'} width="100%">
+      <Box height={'70%'} width="100%">
         <ScrollView>
           {cart.map(product => (
             <Box
@@ -65,6 +65,7 @@ const Resume: React.FC = () => {
           ))}
         </ScrollView>
         <Text
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{
             textAlign: 'center',
             fontSize: 16,
@@ -77,16 +78,18 @@ const Resume: React.FC = () => {
       </Box>
 
       <Box
-        height={'20%'}
+        height={'30%'}
         width="100%"
         alignItems={'center'}
         justifyContent="center">
-        <Box alignItems={'flex-end'}>
-          <Text>
-            <Text
-              style={{ fontSize: 16, fontWeight: 'bold', color: '#ea4c89' }}>
-              Total: R$ {totalValue()}
-            </Text>
+        <HorizontalDivider />
+        <Box flexDirection="row" alignItems="center">
+          <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#000' }}>
+            Total:
+          </Text>
+          <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#ea4c89' }}>
+            {' '}
+            R$ {totalValue()}
           </Text>
         </Box>
         <HorizontalDivider />
