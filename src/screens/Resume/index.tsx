@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, ScrollView, Text, TouchableOpacity } from 'react-native';
+import { Image, ScrollView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box, Container, HorizontalDivider } from '../../components/Spacing';
 import {
@@ -8,7 +8,16 @@ import {
   removeQuantityOfItem,
   shoppingSelector,
 } from '../../redux/slices/shoppingSlice';
-import { ButtonQuantity, ButtonQuantityText, Title } from './styles';
+import {
+  ButtonFinalizePurchase,
+  ButtonQuantity,
+  ButtonQuantityText,
+  TextButtonPurchase,
+  TextNavigate,
+  TextTotal,
+  TextValue,
+  Title,
+} from './styles';
 
 const Resume: React.FC = () => {
   const { cart } = useSelector(shoppingSelector);
@@ -20,8 +29,11 @@ const Resume: React.FC = () => {
     cart.forEach(item => {
       total += item.price * item.quantity;
     });
-    console.log('TOTAL', total);
     return total.toFixed(2);
+  };
+
+  const navigateToHome = () => {
+    navigation.navigate('Liven Shopping');
   };
 
   return (
@@ -64,17 +76,9 @@ const Resume: React.FC = () => {
             </Box>
           ))}
         </ScrollView>
-        <Text
-          // eslint-disable-next-line react-native/no-inline-styles
-          style={{
-            textAlign: 'center',
-            fontSize: 16,
-            fontWeight: 'bold',
-            color: '#ea4c89',
-          }}
-          onPress={() => navigation.navigate('Liven Shopping')}>
-          Continuar comprando
-        </Text>
+        <TextNavigate onPress={() => navigateToHome()}>
+          {cart.length > 0 ? 'Continuar comprando' : 'Voltar para o início'}
+        </TextNavigate>
       </Box>
 
       <Box
@@ -84,34 +88,13 @@ const Resume: React.FC = () => {
         justifyContent="center">
         <HorizontalDivider />
         <Box flexDirection="row" alignItems="center">
-          <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#000' }}>
-            Total:
-          </Text>
-          <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#ea4c89' }}>
-            {' '}
-            R$ {totalValue()}
-          </Text>
+          <TextTotal>Total:</TextTotal>
+          <TextValue> R$ {totalValue()}</TextValue>
         </Box>
         <HorizontalDivider />
-        <TouchableOpacity
-          // eslint-disable-next-line react-native/no-inline-styles
-          style={{
-            height: 52,
-            width: '80%',
-            backgroundColor: '#ea4c89',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 50,
-          }}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 20,
-              fontWeight: 'bold',
-            }}>
-            Finalizar compra
-          </Text>
-        </TouchableOpacity>
+        <ButtonFinalizePurchase>
+          <TextButtonPurchase>Finalizar compra</TextButtonPurchase>
+        </ButtonFinalizePurchase>
       </Box>
     </Container>
   );
