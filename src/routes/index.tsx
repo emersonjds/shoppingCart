@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Details from '../screens/Details';
 import Home from '../screens/Home';
 import Resume from '../screens/Resume';
-import { Button } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
