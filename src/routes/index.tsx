@@ -5,6 +5,8 @@ import Details from '../screens/Details';
 import Home from '../screens/Home';
 import Resume from '../screens/Resume';
 import { Button } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,16 +15,13 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
+          name="Liven Shopping"
           component={Home}
           options={{
-            // headerShown: false,
+            headerTitleAlign: 'center',
+            headerLeft: () => <MCIcon name="menu" size={30} color="#000" />,
             headerRight: () => (
-              <Button
-                onPress={() => alert('This is a button!')}
-                title="Info"
-                color="#000"
-              />
+              <Icon name="shopping-cart" size={30} color="#000" />
             ),
           }}
         />
