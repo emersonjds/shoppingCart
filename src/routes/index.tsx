@@ -6,6 +6,7 @@ import Home from '../screens/Home';
 import Resume from '../screens/Resume';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconCart from '../components/IconCart';
+import IconClearCart from '../components/IconClearCart';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ const Routes = () => {
           component={Resume}
           options={{
             headerTitleAlign: 'center',
+            headerRight: () => <IconClearCart />,
           }}
         />
       </Stack.Navigator>

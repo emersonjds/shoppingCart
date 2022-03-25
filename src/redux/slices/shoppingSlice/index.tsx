@@ -57,8 +57,12 @@ export const slice = createSlice({
   },
 });
 
-export const { addToCart, addQuantityOfItem, removeQuantityOfItem } =
-  slice.actions;
+export const {
+  addToCart,
+  addQuantityOfItem,
+  removeQuantityOfItem,
+  removeAllFromCart,
+} = slice.actions;
 
 export const shoppingSelector = (state: { shopping: any }) => state.shopping;
 
