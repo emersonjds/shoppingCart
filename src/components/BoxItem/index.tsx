@@ -9,7 +9,9 @@ const BoxItem: React.FC<BoxItemProps> = ({ product }) => {
 
   return (
     <>
-      <ItemBox onPress={() => navigation.navigate('Details', { product })}>
+      <ItemBox
+        onPress={() => navigation.navigate('Details', { product })}
+        testID={'item'}>
         <Image
           source={{ uri: product.image }}
           style={{ width: 50, height: 50 }}
