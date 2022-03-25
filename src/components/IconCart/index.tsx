@@ -17,7 +17,10 @@ const IconCart: React.FC = () => {
   );
 
   const navigationToResume = () => {
-    return navigation.navigate('Resume');
+    if (itemsOnCart > 0) {
+      return navigation.navigate('Resume');
+    }
+    return null;
   };
 
   return (
