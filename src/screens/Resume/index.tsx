@@ -71,7 +71,7 @@ const Resume: React.FC = () => {
             fontWeight: 'bold',
             color: '#ea4c89',
           }}
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('Liven Shopping')}>
           Continuar comprando
         </Text>
         <HorizontalDivider />
