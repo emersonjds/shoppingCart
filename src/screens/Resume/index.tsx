@@ -25,10 +25,9 @@ const Resume: React.FC = () => {
   const navigation = useNavigation();
 
   const totalValue = () => {
-    let total = 0;
-    cart.forEach(item => {
-      total += item.price * item.quantity;
-    });
+    const total = cart.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
     return total.toFixed(2);
   };
 

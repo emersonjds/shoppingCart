@@ -35,7 +35,7 @@ export const TextTotal = styled.Text`
 
 export const TextValue = styled.Text`
   font-size: 25px;
-  font-wereight: bold;
+  font-weight: bold;
   color: ${Colors.PRIMARY_COLOR};
 `;
 

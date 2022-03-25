@@ -46,10 +46,6 @@ const Details: React.FC = () => {
     setQuantity(quantity - 1);
   };
 
-  useEffect(() => {
-    console.log(product);
-  }, []);
-
   return (
     <Container>
       <TopContainer>
