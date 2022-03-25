@@ -60,6 +60,6 @@ export const slice = createSlice({
 export const { addToCart, addQuantityOfItem, removeQuantityOfItem } =
   slice.actions;
 
-export const shoppingSelector = (state: { shopping: string }) => state.shopping;
+export const shoppingSelector = (state: { shopping: any }) => state.shopping;
 
 export default slice.reducer;

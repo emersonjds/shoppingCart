@@ -11,10 +11,17 @@ const IconCart: React.FC = () => {
   const { cart } = useSelector(shoppingSelector);
   const navigation = useNavigation();
 
-  const itemsOnCart = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const itemsOnCart = cart.reduce(
+    (acc: number, item: { quantity: number }) => acc + item.quantity,
+    0,
+  );
+
+  const navigationToResume = () => {
+    return navigation.navigate('Resume');
+  };
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Resume')}>
+    <TouchableOpacity onPress={navigationToResume}>
       <Box
         height={20}
         width={20}
