@@ -38,7 +38,7 @@ export const slice = createSlice({
         ],
       };
     },
-    removeAllFromCart: state => {
+    removeAllFromCart: (state, {}) => {
       return {
         ...state,
         cart: [],
