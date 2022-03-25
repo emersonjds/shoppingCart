@@ -22,6 +22,7 @@ const Home: React.FC = () => {
     // console.log(data)})
   }, []);
 
+  // TODO: remove this part
   const dataProduct = [
     {
       id: 1,

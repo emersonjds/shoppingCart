@@ -1,4 +1,4 @@
-import { Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Colors from '../../contants';
 
@@ -39,7 +39,7 @@ export const TextValue = styled.Text`
   color: ${Colors.PRIMARY_COLOR};
 `;
 
-export const ButtonFinalizePurchase = styled.Text`
+export const ButtonFinalizePurchase = styled.TouchableOpacity`
   height: 52px;
   width: 80%;
   background-color: ${Colors.PRIMARY_COLOR};

@@ -1,61 +1,26 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, TouchableOpacity } from 'react-native';
-interface Props {
-  product: {
-    id: number;
-    title: string;
-    image: string;
-    category: string;
-    price: number;
-  };
-}
+import { Image } from 'react-native';
+import { BoxItemProps } from './Model';
+import { ItemBox, ItemBoxPrice, ItemBoxText } from './styles';
 
-const BoxItem: React.FC<Props> = ({ product }) => {
+const BoxItem: React.FC<BoxItemProps> = ({ product }) => {
   const navigation = useNavigation();
 
   return (
     <>
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Details', { product })}
-        // TODO: create a component for that
-        // eslint-disable-next-line react-native/no-inline-styles
-        style={{
-          width: 150,
-          height: 150,
-          borderColor: '#000',
-          borderWidth: 1,
-          margin: 10,
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: '#fff',
-          borderRadius: 10,
-        }}>
-        {/* TODO: create a component for that */}
+      <ItemBox onPress={() => navigation.navigate('Details', { product })}>
         <Image
           source={{ uri: product.image }}
           // eslint-disable-next-line react-native/no-inline-styles
           style={{ width: 50, height: 50 }}
           resizeMode="contain"
         />
-        <Text
-          // eslint-disable-next-line react-native/no-inline-styles
-          style={{
-            textAlign: 'center',
-            color: '#000',
-          }}>
-          Price: {product.price}
-        </Text>
-        <Text
-          numberOfLines={2}
-          ellipsizeMode="tail"
-          style={{
-            textAlign: 'center',
-            color: '#000',
-          }}>
+        <ItemBoxText numberOfLines={2} ellipsizeMode="tail">
           {product.title}
-        </Text>
-      </TouchableOpacity>
+        </ItemBoxText>
+        <ItemBoxPrice>R$ {product.price}</ItemBoxPrice>
+      </ItemBox>
     </>
   );
 };
