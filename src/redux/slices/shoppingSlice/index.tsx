@@ -34,13 +34,13 @@ export const slice = createSlice({
     },
     removeQuantityOfItem: (state, { payload }) => {
       const { id, quantity } = payload;
-      const product = state.cart.find(item => item.id === id);
-      const updateProduct = { ...product, quantity: quantity - 1 };
+      let updateProduct = {};
       return {
         ...state,
         cart: [
           ...state.cart.map(item => {
             if (item.id === id) {
+              updateProduct = { ...item, quantity: quantity - 1 };
               return updateProduct;
             }
             return item;

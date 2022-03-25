@@ -21,7 +21,7 @@ const Resume: React.FC = () => {
       total += item.price * item.quantity;
     });
     console.log('TOTAL', total);
-    return total;
+    return total.toFixed(2);
   };
 
   return (
@@ -74,6 +74,15 @@ const Resume: React.FC = () => {
           onPress={() => navigation.navigate('Home')}>
           Continuar comprando
         </Text>
+        <HorizontalDivider />
+        <Box alignItems={'flex-end'}>
+          <Text>
+            <Text
+              style={{ fontSize: 16, fontWeight: 'bold', color: '#ea4c89' }}>
+              Total: R$ {totalValue()}
+            </Text>
+          </Text>
+        </Box>
       </Box>
 
       <Box
@@ -81,12 +90,6 @@ const Resume: React.FC = () => {
         width="100%"
         alignItems={'center'}
         justifyContent="center">
-        <HorizontalDivider />
-        <Text>
-          <Text style={{ fontWeight: 'bold', color: '#000' }}>
-            R$ Valor total: {totalValue()}
-          </Text>
-        </Text>
         <TouchableOpacity
           // eslint-disable-next-line react-native/no-inline-styles
           style={{
