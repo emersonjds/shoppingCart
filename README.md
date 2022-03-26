@@ -16,6 +16,13 @@ In the project directory, you can run:
 
 `yarn test`
 
+## Techs
+
+- Redux toolkit
+- Styled-components
+- Styled-system
+- Testing-library
+
 ### Ajustes e melhorias
 
 - [ ] Melhoria nos testes unitários para todas as screens
