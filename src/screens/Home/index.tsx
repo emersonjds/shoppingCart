@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import BoxItem from '../../components/BoxItem';
 import { Container, FltList } from './style';
 
 const Home: React.FC = () => {
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
